@@ -1,34 +1,17 @@
-# Initialize a result variable to store the result
-result = 0
+import sys
 
-while True:
-    try:
-        # Input a number from the user
-        num = float(input("Enter a number (or any non-numeric value to stop): "))
+def divide(a, b):
+    if b == 0:
+        return "Error: Division by zero"
+    else:
+        return a / b
 
-        # Ask the user for an operation choice (addition, subtraction, multiplication, or division)
-        operation = input("Choose an operation (+ for addition, - for subtraction, * for multiplication, / for division): ")
+if len(sys.argv) != 3:
+    print("Usage: python division.py <operand1> <operand2>")
+    sys.exit(1)
 
-        if operation == '+':
-            # Addition
-            result += num
-        elif operation == '-':
-            # Subtraction
-            result -= num
-        elif operation == '*':
-            # Multiplication
-            result *= num
-        elif operation == '/':
-            # Division
-            if num == 0:
-                print("Error: Division by zero")
-            else:
-                result /= num
-        else:
-            print("Invalid operation")
-    except ValueError:
-        # If the user enters a non-numeric value, break out of the loop
-        break
+operand1 = float(sys.argv[1])
+operand2 = float(sys.argv[2])
 
-# Print the final result
-print("The result is:", result)
+result = divide(operand1, operand2)
+print("Result:", result)
