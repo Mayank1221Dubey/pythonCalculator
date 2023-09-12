@@ -1,16 +1,14 @@
-# Initialize a variable to store the sum
-total = 0
+import sys
 
-while True:
-    try:
-        # Input a number from the user
-        num = float(input("Enter a number (or any non-numeric value to stop): "))
+def add(a, b):
+    return a + b
 
-        # Add the entered number to the total
-        total += num
-    except ValueError:
-        # If the user enters a non-numeric value, break out of the loop
-        break
+if len(sys.argv) != 3:
+    print("Usage: python addition.py <operand1> <operand2>")
+    sys.exit(1)
 
-# Print the result
-print("The sum of the entered numbers is:", total)
+operand1 = float(sys.argv[1])
+operand2 = float(sys.argv[2])
+
+result = add(operand1, operand2)
+print("Result:", result)

@@ -1,16 +1,14 @@
-# Initialize a variable to store the result
-result = 0
+import sys
 
-while True:
-    try:
-        # Input a number from the user
-        num = float(input("Enter a number (or any non-numeric value to stop): "))
+def subtract(a, b):
+    return a - b
 
-        # Subtract the entered number from the result
-        result -= num
-    except ValueError:
-        # If the user enters a non-numeric value, break out of the loop
-        break
+if len(sys.argv) != 3:
+    print("Usage: python subtraction.py <operand1> <operand2>")
+    sys.exit(1)
 
-# Print the result
-print("The result of the subtraction is:", result)
+operand1 = float(sys.argv[1])
+operand2 = float(sys.argv[2])
+
+result = subtract(operand1, operand2)
+print("Result:", result)
