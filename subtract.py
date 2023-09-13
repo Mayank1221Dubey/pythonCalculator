@@ -12,7 +12,3 @@ operand2 = float(sys.argv[2])
 
 result = subtract(operand1, operand2)
 print("Result:", result)
-print("somethings are important")
-print("I like You")
-print("sjjojwojkoja")
-print("oooooooooooooooooooooooooo")
