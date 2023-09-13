@@ -12,3 +12,5 @@ operand2 = float(sys.argv[2])
 
 result = subtract(operand1, operand2)
 print("Result:", result)
+print("I am Mayank Dubey and I live in pune")
+print("I know My day will come definitely")
